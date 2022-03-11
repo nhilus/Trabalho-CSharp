@@ -104,21 +104,20 @@ namespace _5412_Ficha4
 
             ListaVeiculos();
 
-            Console.WriteLine("Qual o número mínimo do aluno a modificar");
-            int min = int.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o veículo a modificar?");
+            int selecao = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Qual o número máximo do aluno a modificar");
-            int max = int.Parse(Console.ReadLine());
+            
 
             for (int i = 0; i < veiculos.Count; i++)
             {
-                if (typeof(Aluno) == pessoas[i].GetType())
+                if (veiculos[i].Estado == veiculos[i].GetType())
                 {
-                    if (((Aluno)pessoas[i]).Numero >= min && ((Aluno)pessoas[i]).Numero <= max)
+                    if (i == (selecao-1))
                     {
-                        Console.WriteLine("O curso atual do aluno é: " + ((Aluno)pessoas[i]).Curso + "\nQual o novo curso?");
-                        ((Aluno)pessoas[i]).Curso = Console.ReadLine();
-                        Console.WriteLine("Curso alterado com sucesso");
+                        Console.WriteLine($"O estado atual do veículo é: {veiculos[i].Estado}\nQual o novo estado?");
+                        veiculos[i].Estado = Console.ReadLine();
+                        Console.WriteLine("Estado do veículo alterado com sucesso");
                     }
                 }
             }
@@ -176,26 +175,78 @@ namespace _5412_Ficha4
         private static void ListaVeiculosAluguer()
         {
             Console.Clear();
-            Console.WriteLine("------------ Listagem de Veiculos para aluguer  ------------ ");
-            for (int i = 0; i < veiculos.Count; i++)
+            Console.WriteLine("------------ Listagem de Veiculos para Aluguer  ------------ ");
+
+            ListaVeiculos();
+
+            int op = 1;
+            while (op != 0)
             {
-                if (Estado == "Disponivel")
-                    Console.WriteLine(veiculos[i].ToString());
+                Console.WriteLine("Selecione o tipo de viatura:");
+                Console.WriteLine("1-Carros");
+                Console.WriteLine("2-Motas");
+                Console.WriteLine("3-Camiões");
+                Console.WriteLine("4-Camionetas");
+                Console.WriteLine("0-Sair");
+
+                op = int.Parse(Console.ReadLine());
+                switch (op)
+                {
+                    case 0: break;
+                    case 1: ListarCarros(); break;
+                    case 2: ListarMotas(); break;
+                    case 3: ListarCamioes(); break;
+                    case 4: ListarCamionetas(); break;
+                    default: Console.WriteLine("Opção inválida"); Console.ReadKey(); break;
+                }
+
+
+                for (int i = 0; i < veiculos.Count; i++)
+                {
+                    if (veiculos[i].Estado == "Disponivel")
+                        Console.WriteLine(veiculos[i].ToString());
+                }
+                Console.ReadKey();
             }
-            Console.ReadKey();
         }
 
         private static void VeiculosEmManutencao()
         {
             Console.Clear();
-            Console.WriteLine("------------ Listagem de Veiculos em manutenção  ------------ ");
+            Console.WriteLine("------------ Listagem de Veiculos em Manutenção  ------------ ");
             for (int i = 0; i < veiculos.Count; i++)
             {
-                if (Estado == "Manutenção")
+                if (veiculos[i].Estado == "Manutenção")
                     Console.WriteLine(veiculos[i].ToString());
             }
             Console.ReadKey();
         }
+
+        private static void VeiculosAlugados()
+        {
+            Console.Clear();
+            Console.WriteLine("------------ Listagem de Veiculos Alugados  ------------ ");
+            for (int i = 0; i < veiculos.Count; i++)
+            {
+                if (veiculos[i].Estado == "Alugado")
+                    Console.WriteLine(veiculos[i].ToString());
+            }
+            Console.ReadKey();
+        }
+
+        private static void VeiculosReservados()
+        {
+            Console.Clear();
+            Console.WriteLine("------------ Listagem de Veiculos Reservados  ------------ ");
+            for (int i = 0; i < veiculos.Count; i++)
+            {
+                if (veiculos[i].Estado == "Reservado")
+                    Console.WriteLine(veiculos[i].ToString());
+            }
+            Console.ReadKey();
+        }
+
+
 
 
 

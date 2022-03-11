@@ -60,7 +60,7 @@ namespace _5412_Ficha4
                 switch (op)
                 {
                     case 0: break;
-                    case 1: InsElem(); break;
+                    case 1: InsVeiculo(); break;
                     case 2: IdadeMed(); break;
                     case 3: ListarAlunos(); break;
                     case 4: AlterCurso(); break;
@@ -165,7 +165,7 @@ namespace _5412_Ficha4
             Console.ReadKey();
         }
 
-        private static void InsElem()
+        private static void InsVeiculo()
         {
             Console.Clear();
 

@@ -9,9 +9,6 @@ namespace Trabalho_Prático
     internal class Camioneta : Veiculo
     {
 
-        public int numeroEixos;
-        public int numeroMaximoPassageiros;
-
 
         public int NumeroEixos { get; set; }
         public int NumeroMaximoPassageiros { get; set; }

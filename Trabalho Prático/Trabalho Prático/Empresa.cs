@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Trabalho_Prático;
+
 
 namespace _5412_Ficha4
 {
@@ -51,7 +55,7 @@ namespace _5412_Ficha4
                 Console.WriteLine("2-Alterar estado do veículo");
                 Console.WriteLine("3-Lista veiculos disponiveis para aluguer");
                 Console.WriteLine("4-Veiculos em manutenção");
-                Console.WriteLine("5-Listar todos");
+                Console.WriteLine("5-Listar todos os veículos");
                 Console.WriteLine("6-Calcular preço reserva");
                 Console.WriteLine("7-Exportar data");
                 Console.WriteLine("0-Sair");
@@ -61,12 +65,12 @@ namespace _5412_Ficha4
                 {
                     case 0: break;
                     case 1: InsVeiculo(); break;
-                    case 2: IdadeMed(); break;
-                    case 3: ListarAlunos(); break;
-                    case 4: AlterCurso(); break;
-                    case 5: ListarTodos(); break;
+                    case 2: AlterarEstadoVeiculo(); break;
+                    case 3: ListaVeiculosAluguer(); break;
+                    case 4: VeiculosEmManutencao(); break;
+                    case 5: ListaVeiculos(); break;
                     case 6: CalcularPrecoReserva(); break;
-                    case 7: Exportar(); break;
+                    case 7: ExportarData(); break;
                     default: Console.WriteLine("Opção inválida"); Console.ReadKey(); break;
                 }
             }
@@ -78,25 +82,27 @@ namespace _5412_Ficha4
             throw new NotImplementedException();
         }
 
-        private static void Exportar()
+        private static void ExportarData()
         {
             throw new NotImplementedException();
         }
 
-        private static void ListarTodos()
+        private static void ListaVeiculos()
         {
             Console.Clear();
-            Console.WriteLine("------------ Listagem de pessoas  ------------ ");
-            for (int i = 0; i < pessoas.Count; i++)
+            Console.WriteLine("------------ Listagem de Veículos  ------------ ");
+            for (int i = 0; i < veiculos.Count; i++)
             {
-                Console.WriteLine(pessoas[i].ToString());
+                Console.WriteLine((i+1) + veiculos[i].ToString());
             }
             Console.ReadKey();
         }
 
-        private static void AlterCurso()
+        private static void AlterarEstadoVeiculo()
         {
             Console.Clear();
+
+            ListaVeiculos();
 
             Console.WriteLine("Qual o número mínimo do aluno a modificar");
             int min = int.Parse(Console.ReadLine());
@@ -104,7 +110,7 @@ namespace _5412_Ficha4
             Console.WriteLine("Qual o número máximo do aluno a modificar");
             int max = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < pessoas.Count; i++)
+            for (int i = 0; i < veiculos.Count; i++)
             {
                 if (typeof(Aluno) == pessoas[i].GetType())
                 {
@@ -119,93 +125,185 @@ namespace _5412_Ficha4
             Console.ReadKey();
         }
 
-        private static void ListarAlunos()
+        private static void ListarCarros()
         {
             Console.Clear();
-            Console.WriteLine("------------ Listagem de alunos  ------------ ");
-            for (int i = 0; i < pessoas.Count; i++)
+            Console.WriteLine("------------ Listagem de carros  ------------ ");
+            for (int i = 0; i < veiculos.Count; i++)
             {
-                if (typeof(Aluno) == pessoas[i].GetType())
-                    Console.WriteLine(pessoas[i].ToString());
+                if (typeof(Carro) == veiculos[i].GetType())
+                    Console.WriteLine(veiculos[i].ToString());
             }
             Console.ReadKey();
         }
 
-        private static void IdadeMed()
+        private static void ListarMotas()
         {
             Console.Clear();
-            double somaAlunos = 0, somaProfessores = 0, contAlunos = 0, contProfessores = 0;
-
-            for (int i = 0; i < pessoas.Count; i++)
+            Console.WriteLine("------------ Listagem de motas  ------------ ");
+            for (int i = 0; i < veiculos.Count; i++)
             {
-                if (typeof(Aluno) == pessoas[i].GetType())
-                {
-                    somaAlunos += DateTime.Now.Year - pessoas[i].DN.Year;
-                    contAlunos++;
-                }
-                else if (typeof(Professor) == pessoas[i].GetType())
-                {
-                    somaProfessores += DateTime.Now.Year - pessoas[i].DN.Year;
-                    contProfessores++;
-                }
+                if (typeof(Mota) == veiculos[i].GetType())
+                    Console.WriteLine(veiculos[i].ToString());
             }
-
-            if (contAlunos > 0)
-                Console.WriteLine("A média de idade dos alunos é: " + (somaAlunos / contAlunos));
-            else
-                Console.WriteLine("Não existem alunos para a média");
-
-
-            if (contProfessores > 0)
-                Console.WriteLine("A média de idade dos professores é: " + (somaProfessores / contProfessores));
-            else
-                Console.WriteLine("Não existem professores para a média");
-
-
             Console.ReadKey();
         }
+
+        private static void ListarCamioes()
+        {
+            Console.Clear();
+            Console.WriteLine("------------ Listagem de camiões  ------------ ");
+            for (int i = 0; i < veiculos.Count; i++)
+            {
+                if (typeof(Camiao) == veiculos[i].GetType())
+                    Console.WriteLine(veiculos[i].ToString());
+            }
+            Console.ReadKey();
+        }
+
+        private static void ListarCamionetas()
+        {
+            Console.Clear();
+            Console.WriteLine("------------ Listagem de camionetas  ------------ ");
+            for (int i = 0; i < veiculos.Count; i++)
+            {
+                if (typeof(Camioneta) == veiculos[i].GetType())
+                    Console.WriteLine(veiculos[i].ToString());
+            }
+            Console.ReadKey();
+        }
+
+        private static void ListaVeiculosAluguer()
+        {
+            Console.Clear();
+            Console.WriteLine("------------ Listagem de Veiculos para aluguer  ------------ ");
+            for (int i = 0; i < veiculos.Count; i++)
+            {
+                if (Estado == "Disponivel")
+                    Console.WriteLine(veiculos[i].ToString());
+            }
+            Console.ReadKey();
+        }
+
+        private static void VeiculosEmManutencao()
+        {
+            Console.Clear();
+            Console.WriteLine("------------ Listagem de Veiculos em manutenção  ------------ ");
+            for (int i = 0; i < veiculos.Count; i++)
+            {
+                if (Estado == "Manutenção")
+                    Console.WriteLine(veiculos[i].ToString());
+            }
+            Console.ReadKey();
+        }
+
+
+
+        /* private static void IdadeMed()
+         {
+             Console.Clear();
+             double somaAlunos = 0, somaProfessores = 0, contAlunos = 0, contProfessores = 0;
+
+             for (int i = 0; i < pessoas.Count; i++)
+             {
+                 if (typeof(Aluno) == pessoas[i].GetType())
+                 {
+                     somaAlunos += DateTime.Now.Year - pessoas[i].DN.Year;
+                     contAlunos++;
+                 }
+                 else if (typeof(Professor) == pessoas[i].GetType())
+                 {
+                     somaProfessores += DateTime.Now.Year - pessoas[i].DN.Year;
+                     contProfessores++;
+                 }
+             }
+
+             if (contAlunos > 0)
+                 Console.WriteLine("A média de idade dos alunos é: " + (somaAlunos / contAlunos));
+             else
+                 Console.WriteLine("Não existem alunos para a média");
+
+
+             if (contProfessores > 0)
+                 Console.WriteLine("A média de idade dos professores é: " + (somaProfessores / contProfessores));
+             else
+                 Console.WriteLine("Não existem professores para a média");
+
+
+             Console.ReadKey();
+         }*/
 
         private static void InsVeiculo()
         {
             Console.Clear();
 
-            Console.WriteLine("Pretende inserir um \n1-Professor\n2-Aluno");
+            Console.WriteLine("Pretende inserir que tipo de veículo?\n 1-Carro\n2-Mota\n3-Camião\n4-Camioneta ");
             int op = int.Parse(Console.ReadLine());
 
-            if (op < 1 || op > 2)
+            if (op < 1 || op > 4)
             {
                 Console.WriteLine("Opção inválida");
                 Console.ReadKey();
                 return;
             }
 
-            Console.WriteLine("Qual o nome");
-            string nome = Console.ReadLine();
+            Console.WriteLine("Qual a marca e modelo:");
+            string marcaModelo = Console.ReadLine();
 
-            Console.WriteLine("Qual a data de nascimento (aaaa/mm/dd)");
-            DateTime dn = DateTime.Parse(Console.ReadLine());
+            Console.WriteLine("Tipo de viatura:");
+            string tipo = Console.ReadLine();
 
-            Console.WriteLine("Qual a altura?");
-            double altura = double.Parse(Console.ReadLine());
+            Console.WriteLine("Quantidade:");
+            int quantidade = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Qual a cor?");
+            string cor = Console.ReadLine();
+
+            Console.WriteLine("Qual o tipo de combustivel:");
+            string combustivel = Console.ReadLine();
+
+            Console.WriteLine("Preço por dia:");
+            int precoDia = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("O carro encontra-se disponivel ou em manutenção?");
+            string estado = Console.ReadLine();
+
 
             if (op == 1)
             {
-                Console.WriteLine("Qual a área");
-                string area = Console.ReadLine();
+                Console.WriteLine("Numero de portas do carro: ");
+                int numeroPortas = int.Parse(Console.ReadLine());
 
-                pessoas.Add(new Professor(nome, dn, altura, area));
-                Console.WriteLine("Professor adicionado com sucesso");
+                Console.WriteLine("Tipo de caixa que o carro tem: ");
+                string tipoCaixa = Console.ReadLine();
+
+                veiculos.Add(new Carro( marcaModelo, tipo, quantidade, cor, combustivel, precoDia, estado, numeroPortas, tipoCaixa));
+                Console.WriteLine("Carro adicionado com sucesso");
             }
-            else
+            else if (op == 2)
             {
-                Console.WriteLine("Qual o número");
-                int numero = int.Parse(Console.ReadLine());
+                Console.WriteLine("Cilindrada: ");
+                int cilindrada = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Qual o curso");
-                string curso = Console.ReadLine();
+                veiculos.Add(new Mota(marcaModelo, tipo, quantidade, cor, combustivel, precoDia, estado, cilindrada));
+                Console.WriteLine("Mota adicionada com sucesso");
+            }else if (op == 3)
+            {
+                Console.WriteLine("Numero de eixos da camioneta : ");
+                int numeroEixos = int.Parse(Console.ReadLine());
 
-                pessoas.Add(new Aluno(nome, dn, altura, numero, curso));
-                Console.WriteLine("Aluno adicionado com sucesso");
+                Console.WriteLine("Numero máximo de passageiros: ");
+                int numeroPassageiros = int.Parse(Console.ReadLine());
+
+                veiculos.Add(new Camioneta(marcaModelo, tipo, quantidade, cor, combustivel, precoDia, estado, numeroEixos, numeroPassageiros));
+                Console.WriteLine("Camioneta adicionada com sucesso");
+            }else
+            {
+                Console.WriteLine("Peso máximo suportado:");
+                int pesoMaximo = int.Parse(Console.ReadLine());
+
+                veículos.Add(new Camiao(marcaModelo, tipo, quantidade, cor, combustivel, precoDia, estado, pesoMaximo));
+                Console.WriteLine("Camião adicionado com sucesso");
             }
 
             Console.ReadKey();

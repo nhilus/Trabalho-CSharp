@@ -52,7 +52,8 @@ namespace _5412_Ficha4
                 Console.WriteLine("3-Lista veiculos disponiveis para aluguer");
                 Console.WriteLine("4-Veiculos em manutenção");
                 Console.WriteLine("5-Listar todos");
-                Console.WriteLine("6-Exportar data");
+                Console.WriteLine("6-Calcular preço reserva");
+                Console.WriteLine("7-Exportar data");
                 Console.WriteLine("0-Sair");
                 op = int.Parse(Console.ReadLine());
 
@@ -64,11 +65,17 @@ namespace _5412_Ficha4
                     case 3: ListarAlunos(); break;
                     case 4: AlterCurso(); break;
                     case 5: ListarTodos(); break;
-                    case 6: Exportar(); break;
+                    case 6: CalcularPrecoReserva(); break;
+                    case 7: Exportar(); break;
                     default: Console.WriteLine("Opção inválida"); Console.ReadKey(); break;
                 }
             }
 
+        }
+
+        private static void CalcularPrecoReserva()
+        {
+            throw new NotImplementedException();
         }
 
         private static void Exportar()

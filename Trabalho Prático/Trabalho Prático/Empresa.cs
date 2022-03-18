@@ -21,25 +21,25 @@ namespace _5412_Ficha4
             veiculos.Add(new Carro("BMW Serie1",  "Carro", 1, "Preto", "Gasóleo", 22, "Disponivel", 5, "Manual"));
             veiculos.Add(new Carro("BMW Serie2",  "Carro", 1, "Cinza", "Gasóleo", 24, "Disponivel", 5, "Manual"));
             veiculos.Add(new Carro("BMW Serie1",  "Carro", 1, "Preto", "Gasóleo", 24, "Disponivel", 5, "Manual"));
-            veiculos.Add(new Carro("Mazda CX-3",  "Carro", 2, "Vermelho", "Gasóleo", 18, "Disponivel", 5, "Manual"));
-            veiculos.Add(new Carro("Mazda CX-3",  "Carro", 2, "Azul", "Gasóleo", 18, "Disponivel", 5, "Manual"));
-            veiculos.Add(new Carro("Mazda CX-5",  "Carro", 2, "Vermelho", "Gasóleo", 20, "Disponivel", 5, "Manual"));
+            veiculos.Add(new Carro("Mazda CX-3",  "Carro", 1, "Vermelho", "Gasóleo", 18, "Disponivel", 5, "Manual"));
+            veiculos.Add(new Carro("Mazda CX-3",  "Carro", 1, "Azul", "Gasóleo", 18, "Disponivel", 5, "Manual"));
+            veiculos.Add(new Carro("Mazda CX-3",  "Carro", 1, "Vermelho", "Gasóleo", 20, "Disponivel", 5, "Manual"));
             veiculos.Add(new Carro("Mazda CX-3",  "Carro", 1, "Azul", "Gasóleo", 20, "Disponivel", 5, "Manual"));
             veiculos.Add(new Carro("Porche 911",  "Carro", 1, "Cinza", "Gasolina", 40, "Disponivel", 3, "Automática"));
-            veiculos.Add(new Carro("Renault Clio", "Carro", 2, "Branco", "Gasóleo", 12, "Disponivel", 3, "Manual"));
-            veiculos.Add(new Carro("Renault Clio",  "Carro", 2, "Preto", "Gasolina", 10, "Disponivel", 5, "Manual"));
+            veiculos.Add(new Carro("Renault Clio", "Carro", 1, "Branco", "Gasóleo", 12, "Disponivel", 3, "Manual"));
+            veiculos.Add(new Carro("Renault Clio",  "Carro", 1, "Preto", "Gasolina", 10, "Disponivel", 5, "Manual"));
             veiculos.Add(new Carro("Renault Megane",  "Carro", 1, "Vermelho", "Gasóleo", 16, "Disponivel", 5, "Manual"));
             veiculos.Add(new Carro("Renault Megane",  "Carro", 1, "Azul", "Gasóleo", 16, "Disponivel", 5, "Manual"));
             veiculos.Add(new Carro("Renault Megane",  "Carro", 1, "Preto", "Gasóleo", 16, "Disponivel", 5, "Manual"));
             veiculos.Add(new Carro("Renault Megane",  "Carro", 1, "Cinza", "Gasóleo", 16, "Disponivel", 5, "Manual"));
-            veiculos.Add(new Carro("Renault Zoe", "Carro", 3, "Branco", "Elétrico", 25, "Disponivel", 5, "Automática"));
+            veiculos.Add(new Carro("Renault Zoe", "Carro", 1, "Branco", "Elétrico", 25, "Disponivel", 5, "Automática"));
             veiculos.Add(new Carro("Toyota CH-R", "Carro", 1, "Preto", "Híbrido", 27, "Disponivel", 5, "Automática"));
             veiculos.Add(new Carro("Toyota CH-R", "Carro", 1, "Cinza", "Híbrido", 27, "Disponivel", 5, "Automática"));
-            veiculos.Add(new Carro("Toyota Prius", "Carro", 2, "Vermelho", "Híbrido", 25, "Disponivel", 5, "Automática"));
+            veiculos.Add(new Carro("Toyota Prius", "Carro", 1, "Vermelho", "Híbrido", 25, "Disponivel", 5, "Automática"));
             veiculos.Add(new Carro("Toyota Prius", "Carro", 1, "Azul", "Híbrido", 25, "Disponivel", 5, "Automática"));
             veiculos.Add(new Carro("Toyota Corolla", "Carro", 1, "Preto", "Gasolina", 15, "Disponivel", 5, "Manual"));
-            veiculos.Add(new Carro("Seat Leon", "Carro", 2, "Preto", "Gasóleo", 17, "Disponivel", 3, "Manual"));
-            veiculos.Add(new Mota("Honda CBR",  "Mota", 2, "Amarelo", "Gasolina", 10, "Disponivel", 125));
+            veiculos.Add(new Carro("Seat Leon", "Carro", 1, "Preto", "Gasóleo", 17, "Disponivel", 3, "Manual"));
+            veiculos.Add(new Mota("Honda CBR",  "Mota", 1, "Amarelo", "Gasolina", 10, "Disponivel", 125));
             veiculos.Add(new Mota("Kawasaki ZXR", "Mota", 2, "Vermelho", "Gasolina", 10, "Disponivel", 300));
             veiculos.Add(new Camioneta("Irizar PB", "Camioneta", 1, "Preto", "Gasóleo", 100, "Disponivel", 3, 150));
             veiculos.Add(new Camiao("MAN", "Camião", 1, "Preto", "Gasóleo", 120, "Disponivel", 2000));
@@ -80,11 +80,37 @@ namespace _5412_Ficha4
         private static void CalcularPrecoReserva()
         {
             throw new NotImplementedException();
+
+            //validações: if date.now>reservationEndDate: veiculo.estado= Disponivel
+            //variaveis: date.now, reservationDate, reservationEndDate, precoDia, precoFinal, 
+            //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
         private static void ExportarData()
         {
             throw new NotImplementedException();
+        }
+
+
+        private  static void LerLista()
+        {
+
         }
 
         private static void ListaVeiculos()
@@ -107,20 +133,11 @@ namespace _5412_Ficha4
             Console.WriteLine("Qual o veículo a modificar?");
             int selecao = int.Parse(Console.ReadLine());
 
-            
 
-            for (int i = 0; i < veiculos.Count; i++)
-            {
-                if (veiculos[i].Estado == veiculos[i].GetType())
-                {
-                    if (i == (selecao-1))
-                    {
-                        Console.WriteLine($"O estado atual do veículo é: {veiculos[i].Estado}\nQual o novo estado?");
-                        veiculos[i].Estado = Console.ReadLine();
-                        Console.WriteLine("Estado do veículo alterado com sucesso");
-                    }
-                }
-            }
+            Console.WriteLine($"O estado atual do veículo é: {veiculos[i].Estado}\nQual o novo estado?");
+            veiculos[selecao-1].Estado = Console.ReadLine();
+            Console.WriteLine("Estado do veículo alterado com sucesso");
+           
             Console.ReadKey();
         }
 
@@ -328,8 +345,10 @@ namespace _5412_Ficha4
                 Console.WriteLine("Tipo de caixa que o carro tem: ");
                 string tipoCaixa = Console.ReadLine();
 
-                veiculos.Add(new Carro( marcaModelo, tipo, quantidade, cor, combustivel, precoDia, estado, numeroPortas, tipoCaixa));
+                veiculos.Add(new Carro(marcaModelo, tipo, quantidade, cor, combustivel, precoDia, estado, numeroPortas, tipoCaixa));
                 Console.WriteLine("Carro adicionado com sucesso");
+
+
             }
             else if (op == 2)
             {
@@ -353,7 +372,7 @@ namespace _5412_Ficha4
                 Console.WriteLine("Peso máximo suportado:");
                 int pesoMaximo = int.Parse(Console.ReadLine());
 
-                veículos.Add(new Camiao(marcaModelo, tipo, quantidade, cor, combustivel, precoDia, estado, pesoMaximo));
+                veiculos.Add(new Camiao(marcaModelo, tipo, quantidade, cor, combustivel, precoDia, estado, pesoMaximo));
                 Console.WriteLine("Camião adicionado com sucesso");
             }
 

@@ -3,3 +3,8 @@ C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Deb
 C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.AssemblyInfoInputs.cache
 C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.AssemblyInfo.cs
 C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.csproj.CoreCompileInputs.cache
+C:\Users\Nhillus\Desktop\New folder\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.csproj.AssemblyReference.cache
+C:\Users\Nhillus\Desktop\New folder\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nhillus\Desktop\New folder\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.AssemblyInfoInputs.cache
+C:\Users\Nhillus\Desktop\New folder\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.AssemblyInfo.cs
+C:\Users\Nhillus\Desktop\New folder\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.csproj.CoreCompileInputs.cache

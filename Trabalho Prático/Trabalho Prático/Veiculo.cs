@@ -53,6 +53,7 @@
 
         public override string ToString()
         {
+            Console.WriteLine($"Marca e modelo: {MarcaModelo}|| Tipo: {Tipo} || Qtd: {Quantidade} || Cor: {Cor} || Combustivel: {Combustivel} || Preco por dia: {PrecoDia} || Estado: {Estado}");
             return base.ToString();
         }
 

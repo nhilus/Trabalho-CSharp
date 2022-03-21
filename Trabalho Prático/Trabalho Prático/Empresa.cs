@@ -83,6 +83,7 @@ namespace _5412_Ficha4
 
             //validações: if date.now>reservationEndDate: veiculo.estado= Disponivel
             //variaveis: date.now, reservationDate, reservationEndDate, precoDia, precoFinal, 
+            // usar timeSpan, depois timeSpan*precoDia;
             //
 
 
@@ -117,9 +118,9 @@ namespace _5412_Ficha4
         {
             Console.Clear();
             Console.WriteLine("------------ Listagem de Veículos  ------------ ");
-            for (int i = 0; i < veiculos.Count; i++)
+            foreach (var veiculo in veiculos)
             {
-                Console.WriteLine((i+1) + veiculos[i].ToString());
+                Console.WriteLine(veiculo.ToString());
             }
             Console.ReadKey();
         }
@@ -134,7 +135,7 @@ namespace _5412_Ficha4
             int selecao = int.Parse(Console.ReadLine());
 
 
-            Console.WriteLine($"O estado atual do veículo é: {veiculos[i].Estado}\nQual o novo estado?");
+            Console.WriteLine($"O estado atual do veículo é: {veiculos[selecao-1].Estado}\nQual o novo estado?");
             veiculos[selecao-1].Estado = Console.ReadLine();
             Console.WriteLine("Estado do veículo alterado com sucesso");
            
@@ -194,7 +195,6 @@ namespace _5412_Ficha4
             Console.Clear();
             Console.WriteLine("------------ Listagem de Veiculos para Aluguer  ------------ ");
 
-            ListaVeiculos();
 
             int op = 1;
             while (op != 0)
@@ -262,44 +262,6 @@ namespace _5412_Ficha4
             }
             Console.ReadKey();
         }
-
-
-
-
-
-        /* private static void IdadeMed()
-         {
-             Console.Clear();
-             double somaAlunos = 0, somaProfessores = 0, contAlunos = 0, contProfessores = 0;
-
-             for (int i = 0; i < pessoas.Count; i++)
-             {
-                 if (typeof(Aluno) == pessoas[i].GetType())
-                 {
-                     somaAlunos += DateTime.Now.Year - pessoas[i].DN.Year;
-                     contAlunos++;
-                 }
-                 else if (typeof(Professor) == pessoas[i].GetType())
-                 {
-                     somaProfessores += DateTime.Now.Year - pessoas[i].DN.Year;
-                     contProfessores++;
-                 }
-             }
-
-             if (contAlunos > 0)
-                 Console.WriteLine("A média de idade dos alunos é: " + (somaAlunos / contAlunos));
-             else
-                 Console.WriteLine("Não existem alunos para a média");
-
-
-             if (contProfessores > 0)
-                 Console.WriteLine("A média de idade dos professores é: " + (somaProfessores / contProfessores));
-             else
-                 Console.WriteLine("Não existem professores para a média");
-
-
-             Console.ReadKey();
-         }*/
 
         private static void InsVeiculo()
         {

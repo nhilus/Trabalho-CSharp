@@ -41,7 +41,7 @@ namespace Trabalho_Prático
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + $"|| Cilindrada: {Cilindrada}"; 
         }
 
 

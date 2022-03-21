@@ -50,7 +50,7 @@ namespace Trabalho_Prático
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + $"|| Numero de portas: {NumeroPortas} || Tipo de Caixa: {TipoCaixa}";
         }
     }
 }

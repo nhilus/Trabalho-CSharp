@@ -48,7 +48,7 @@ namespace Trabalho_Prático
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + $"|| Numero de eixos: {NumeroEixos} || Numero máximo de passageiros: {NumeroMaximoPassageiros}";
         }
     }
 

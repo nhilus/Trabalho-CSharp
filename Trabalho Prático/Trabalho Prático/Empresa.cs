@@ -8,9 +8,20 @@ using Trabalho_Prático;
 
 namespace _5412_Ficha4
 {
+
+    public enum Estado
+    {
+        Alugado,
+        Reservado,
+        Manutenção,
+        Disponivel
+    }
     class Empresa
     {
+
         static List<Veiculo> veiculos;
+
+       
         static void Main(string[] args)
         {
             veiculos = new List<Veiculo>();
@@ -40,7 +51,8 @@ namespace _5412_Ficha4
             veiculos.Add(new Carro("Toyota Corolla", "Carro", 1, "Preto", "Gasolina", 15, "Disponivel", 5, "Manual"));
             veiculos.Add(new Carro("Seat Leon", "Carro", 1, "Preto", "Gasóleo", 17, "Disponivel", 3, "Manual"));
             veiculos.Add(new Mota("Honda CBR",  "Mota", 1, "Amarelo", "Gasolina", 10, "Disponivel", 125));
-            veiculos.Add(new Mota("Kawasaki ZXR", "Mota", 2, "Vermelho", "Gasolina", 10, "Disponivel", 300));
+            veiculos.Add(new Mota("Kawasaki ZXR", "Mota", 1, "Vermelho", "Gasolina", 10, "Disponivel", 300));
+            veiculos.Add(new Mota("Kawasaki ZXR", "Mota", 1, "Vermelho", "Gasolina", 10, "Disponivel", 300));
             veiculos.Add(new Camioneta("Irizar PB", "Camioneta", 1, "Preto", "Gasóleo", 100, "Disponivel", 3, 150));
             veiculos.Add(new Camiao("MAN", "Camião", 1, "Preto", "Gasóleo", 120, "Disponivel", 2000));
             veiculos.Add(new Camiao("Mercedes","Camião", 1, "Preto", "Gasóleo", 180, "Disponivel", 2500));
@@ -88,39 +100,28 @@ namespace _5412_Ficha4
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
+
+
 
         private static void ExportarData()
         {
             throw new NotImplementedException();
         }
 
-
-        private  static void LerLista()
-        {
-
-        }
-
         private static void ListaVeiculos()
         {
             Console.Clear();
             Console.WriteLine("------------ Listagem de Veículos  ------------ ");
+
+            //for(){}
+
+
+            var index = 1;
             foreach (var veiculo in veiculos)
             {
-                Console.WriteLine(veiculo.ToString());
+                Console.WriteLine($"{index++}:{veiculo.ToString()}");
+                Console.WriteLine("------------------------------------------------------------------------------------------------");
             }
             Console.ReadKey();
         }
@@ -131,11 +132,12 @@ namespace _5412_Ficha4
 
             ListaVeiculos();
 
+
             Console.WriteLine("Qual o veículo a modificar?");
             int selecao = int.Parse(Console.ReadLine());
 
 
-            Console.WriteLine($"O estado atual do veículo é: {veiculos[selecao-1].Estado}\nQual o novo estado?");
+            Console.WriteLine($"O estado atual do veículo é: {veiculos[selecao-1].MarcaModelo +"-"+ veiculos[selecao-1].Estado}\nQual o novo estado?");
             veiculos[selecao-1].Estado = Console.ReadLine();
             Console.WriteLine("Estado do veículo alterado com sucesso");
            
@@ -149,7 +151,13 @@ namespace _5412_Ficha4
             for (int i = 0; i < veiculos.Count; i++)
             {
                 if (typeof(Carro) == veiculos[i].GetType())
-                    Console.WriteLine(veiculos[i].ToString());
+                {
+                    if (veiculos[i].Estado == "Disponivel")
+                    {
+                        Console.WriteLine(veiculos[i].ToString());
+                    }
+                }
+
             }
             Console.ReadKey();
         }
@@ -161,7 +169,13 @@ namespace _5412_Ficha4
             for (int i = 0; i < veiculos.Count; i++)
             {
                 if (typeof(Mota) == veiculos[i].GetType())
-                    Console.WriteLine(veiculos[i].ToString());
+                {
+                    if (veiculos[i].Estado == "Disponivel")
+                    {
+                        Console.WriteLine(veiculos[i].ToString());
+                    }
+                }
+
             }
             Console.ReadKey();
         }
@@ -173,7 +187,13 @@ namespace _5412_Ficha4
             for (int i = 0; i < veiculos.Count; i++)
             {
                 if (typeof(Camiao) == veiculos[i].GetType())
-                    Console.WriteLine(veiculos[i].ToString());
+                {
+                    if (veiculos[i].Estado == "Disponivel")
+                    {
+                        Console.WriteLine(veiculos[i].ToString());
+                    }
+                }
+
             }
             Console.ReadKey();
         }
@@ -185,7 +205,13 @@ namespace _5412_Ficha4
             for (int i = 0; i < veiculos.Count; i++)
             {
                 if (typeof(Camioneta) == veiculos[i].GetType())
-                    Console.WriteLine(veiculos[i].ToString());
+                {
+                    if (veiculos[i].Estado == "Disponivel")
+                    {
+                        Console.WriteLine(veiculos[i].ToString());
+                    }
+                }
+                    
             }
             Console.ReadKey();
         }
@@ -218,12 +244,12 @@ namespace _5412_Ficha4
                 }
 
 
-                for (int i = 0; i < veiculos.Count; i++)
-                {
-                    if (veiculos[i].Estado == "Disponivel")
-                        Console.WriteLine(veiculos[i].ToString());
-                }
-                Console.ReadKey();
+                //for (int i = 0; i < veiculos.Count; i++)
+                //{
+                //    if (veiculos[i].Estado == "Disponivel")
+                //        Console.WriteLine(veiculos[i].ToString());
+                //}
+                //Console.ReadKey();
             }
         }
 
@@ -231,9 +257,10 @@ namespace _5412_Ficha4
         {
             Console.Clear();
             Console.WriteLine("------------ Listagem de Veiculos em Manutenção  ------------ ");
+            
             for (int i = 0; i < veiculos.Count; i++)
             {
-                if (veiculos[i].Estado == "Manutenção")
+                if (veiculos[i].Estado == "Manutençao")
                     Console.WriteLine(veiculos[i].ToString());
             }
             Console.ReadKey();

@@ -1,4 +1,6 @@
-﻿namespace Trabalho_Prático
+﻿using System;
+
+namespace Trabalho_Prático
 {
     internal class Veiculo
     {
@@ -53,8 +55,8 @@
 
         public override string ToString()
         {
-            Console.WriteLine($"Marca e modelo: {MarcaModelo}|| Tipo: {Tipo} || Qtd: {Quantidade} || Cor: {Cor} || Combustivel: {Combustivel} || Preco por dia: {PrecoDia} || Estado: {Estado}");
-            return base.ToString();
+            return $"Marca e modelo: {MarcaModelo}|| Tipo: {Tipo} || Qtd: {Quantidade} || Cor: {Cor} || Combustivel: {Combustivel} || Preco por dia: {PrecoDia} || Estado: {Estado}";
+           
         }
 
         public override int GetHashCode()

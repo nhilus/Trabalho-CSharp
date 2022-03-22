@@ -24,3 +24,14 @@ C:\Users\T0121073\Desktop\New folder (2)\Trabalho Prático\Trabalho Prático\obj
 C:\Users\T0121073\Desktop\New folder (2)\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\ref\Trabalho Prático.dll
 C:\Users\T0121073\Desktop\New folder (2)\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.pdb
 C:\Users\T0121073\Desktop\New folder (2)\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.genruntimeconfig.cache
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net5.0\Trabalho Prático.exe
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net5.0\Trabalho Prático.deps.json
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net5.0\Trabalho Prático.runtimeconfig.json
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net5.0\Trabalho Prático.runtimeconfig.dev.json
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net5.0\Trabalho Prático.dll
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net5.0\ref\Trabalho Prático.dll
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net5.0\Trabalho Prático.pdb
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.dll
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\ref\Trabalho Prático.dll
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.pdb
+C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.genruntimeconfig.cache

@@ -8,20 +8,9 @@ using Trabalho_Prático;
 
 namespace _5412_Ficha4
 {
-
-    public enum Estado
-    {
-        Alugado,
-        Reservado,
-        Manutenção,
-        Disponivel
-    }
     class Empresa
     {
-
         static List<Veiculo> veiculos;
-
-       
         static void Main(string[] args)
         {
             veiculos = new List<Veiculo>();
@@ -58,11 +47,11 @@ namespace _5412_Ficha4
             veiculos.Add(new Camiao("Mercedes","Camião", 1, "Preto", "Gasóleo", 180, "Disponivel", 2500));
             veiculos.Add(new Camiao("Scania", "Camião", 1, "Preto", "Gasóleo", 160, "Disponivel", 1750));
 
-
             int op = 1;
             while (op != 0)
             {
                 Console.Clear();
+                Console.WriteLine("______________________________________________________________MENU___________________________________________________________");
                 Console.WriteLine("1-Inserir novo veiculo");
                 Console.WriteLine("2-Alterar estado do veículo");
                 Console.WriteLine("3-Lista veiculos disponiveis para aluguer");
@@ -71,6 +60,7 @@ namespace _5412_Ficha4
                 Console.WriteLine("6-Calcular preço reserva");
                 Console.WriteLine("7-Exportar data");
                 Console.WriteLine("0-Sair");
+                Console.WriteLine("_____________________________________________________________________________________________________________________________");
                 op = int.Parse(Console.ReadLine());
 
                 switch (op)
@@ -88,35 +78,74 @@ namespace _5412_Ficha4
             }
 
         }
-
         private static void CalcularPrecoReserva()
         {
-            throw new NotImplementedException();
-
             //validações: if date.now>reservationEndDate: veiculo.estado= Disponivel
             //variaveis: date.now, reservationDate, reservationEndDate, precoDia, precoFinal, 
             // usar timeSpan, depois timeSpan*precoDia;
-            //
+            ListaVeiculosAluguer();
 
 
 
+
+
+
+
+            
         }
-
-
 
         private static void ExportarData()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Pressione uma tecla para exportar tabela:");
+            Console.ReadKey();
+
+            string style = "text-align: center; color: white; background-color: black";
+            StringBuilder ex = new StringBuilder();
+
+            ex.Append("<table>");
+            ex.Append($"<tr><th style ='{style}'> Marca Modelo </th><th style ='{style}'> Tipo </th><th style ='{style}'> Quantidade </th><th style ='{style}'> Cor </th><th style ='{style}'> Combustivel </th><th style ='{style}'> Preço por dia </th><th style ='{style}'> Estado </th><th style ='{style}'> Numero de Portas </th><th style ='{style}'> Tipo de Caixa </th><th style ='{style}'> Peso Máximo </th><th style ='{style}'> Numero de eixos </th><th style ='{style}'> Max. Passageiros </th><th style ='{style}'> Cilindrada </th></tr>");
+
+            var rows = from veiculo in veiculos
+                       let row = Linha(veiculo)
+                       select row;
+            rows.ToList().ForEach(row =>ex.Append( "<tr>"+row+ "</tr> "));
+            ex.Append("</table>");
+
+            System.IO.File.WriteAllText(@"d:\ficheiro.html", ex.ToString());
+            Console.WriteLine("Ficheiro criado com sucesso.");
+            Console.ReadKey();
         }
+        private static string Linha(Veiculo obj) 
+        {
+            string style = "text-align: center; border-bottom: 1px solid black";
+            if (typeof(Carro) == obj.GetType())
+                {
+               Carro? veiculo= obj as Carro;
+                return $"<td style ='{style}'>{veiculo.MarcaModelo}</td><td style ='{style}'>{veiculo.Tipo}</td><td style ='{style}'>{veiculo.Quantidade}</td><td style ='{style}'>{veiculo.Cor}</td><td style ='{style}'>{veiculo.Combustivel}</td><td style ='{style}'>{veiculo.PrecoDia}</td><td style ='{style}'>{veiculo.Estado}</td><td style ='{style}'>{veiculo.NumeroPortas }</td><td style ='{style}'>{veiculo.TipoCaixa}</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>--</td>";
+            }else if (typeof(Camiao) == obj.GetType())
+            {
+                Camiao? veiculo = obj as Camiao;
+                return $"<td style ='{style}'>{veiculo.MarcaModelo}</td><td style ='{style}'>{veiculo.Tipo}</td><td style ='{style}'>{veiculo.Quantidade}</td><td style ='{style}'>{veiculo.Cor}</td><td style ='{style}'>{veiculo.Combustivel}</td><td style ='{style}'>{veiculo.PrecoDia}</td><td style ='{style}'>{veiculo.Estado}</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>{veiculo.PesoMaximo}</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>--</td>";
+            }
+            else if (typeof(Camioneta) == obj.GetType())
+            {
+                Camioneta veiculo = obj as Camioneta;
+                return $"<td style ='{style}'>{veiculo.MarcaModelo}</td><td style ='{style}'>{veiculo.Tipo}</td><td style ='{style}'>{veiculo.Quantidade}</td><td style ='{style}'>{veiculo.Cor}</td><td style ='{style}'>{veiculo.Combustivel}</td><td style ='{style}'>{veiculo.PrecoDia}</td><td style ='{style}'>{veiculo.Estado}</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>{veiculo.NumeroEixos}</td><td style ='{style}'>{veiculo.NumeroMaximoPassageiros}</td><td style ='{style}'>--</td>";
+            }
+            else if (typeof(Mota) == obj.GetType())
+            {
+                Mota? veiculo = obj as Mota;
+                return $"<td style ='{style}'>{veiculo.MarcaModelo}</td><td style ='{style}'>{veiculo.Tipo}</td><td style ='{style}'>{veiculo.Quantidade}</td><td style ='{style}'>{veiculo.Cor}</td><td style ='{style}'>{veiculo.Combustivel}</td><td style ='{style}'>{veiculo.PrecoDia}</td><td style ='{style}'>{veiculo.Estado}</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>--</td><td style ='{style}'>{veiculo.Cilindrada}</td>";
+            }
+
+            return "";
+        }
+
 
         private static void ListaVeiculos()
         {
             Console.Clear();
             Console.WriteLine("------------ Listagem de Veículos  ------------ ");
-
-            //for(){}
-
-
             var index = 1;
             foreach (var veiculo in veiculos)
             {
@@ -132,18 +161,14 @@ namespace _5412_Ficha4
 
             ListaVeiculos();
 
-
             Console.WriteLine("Qual o veículo a modificar?");
             int selecao = int.Parse(Console.ReadLine());
-
 
             Console.WriteLine($"O estado atual do veículo é: {veiculos[selecao-1].MarcaModelo +"-"+ veiculos[selecao-1].Estado}\nQual o novo estado?");
             veiculos[selecao-1].Estado = Console.ReadLine();
             Console.WriteLine("Estado do veículo alterado com sucesso");
-           
             Console.ReadKey();
         }
-
         private static void ListarCarros()
         {
             Console.Clear();
@@ -161,7 +186,6 @@ namespace _5412_Ficha4
             }
             Console.ReadKey();
         }
-
         private static void ListarMotas()
         {
             Console.Clear();
@@ -179,7 +203,6 @@ namespace _5412_Ficha4
             }
             Console.ReadKey();
         }
-
         private static void ListarCamioes()
         {
             Console.Clear();
@@ -193,7 +216,6 @@ namespace _5412_Ficha4
                         Console.WriteLine(veiculos[i].ToString());
                     }
                 }
-
             }
             Console.ReadKey();
         }
@@ -220,7 +242,6 @@ namespace _5412_Ficha4
         {
             Console.Clear();
             Console.WriteLine("------------ Listagem de Veiculos para Aluguer  ------------ ");
-
 
             int op = 1;
             while (op != 0)

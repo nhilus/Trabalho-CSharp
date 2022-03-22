@@ -12,7 +12,6 @@ namespace Trabalho_Prático
         public int PesoMaximo { get; set; }
 
 
-
         public Camiao() : base()
         {
             PesoMaximo = 0;
@@ -28,6 +27,7 @@ namespace Trabalho_Prático
             PesoMaximo = cPesado.PesoMaximo;
         }
 
+        
 
         public override int GetHashCode()
         {

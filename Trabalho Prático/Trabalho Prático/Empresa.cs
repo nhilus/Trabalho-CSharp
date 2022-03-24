@@ -59,6 +59,8 @@ namespace _5412_Ficha4
                 Console.WriteLine("5-Listar todos os veículos");
                 Console.WriteLine("6-Calcular preço reserva");
                 Console.WriteLine("7-Exportar data");
+                Console.WriteLine("8-Listar todos os veículos alugados");
+                Console.WriteLine("9-Listar todos os veículos em manutenção");
                 Console.WriteLine("0-Sair");
                 Console.WriteLine("_____________________________________________________________________________________________________________________________");
                 op = int.Parse(Console.ReadLine());
@@ -73,26 +75,50 @@ namespace _5412_Ficha4
                     case 5: ListaVeiculos(); break;
                     case 6: CalcularPrecoReserva(); break;
                     case 7: ExportarData(); break;
+                    case 8: ListaVeiculosAluguer(); break;
+                    case 9: VeiculosEmManutencao(); break;
                     default: Console.WriteLine("Opção inválida"); Console.ReadKey(); break;
                 }
             }
 
         }
-        private static void CalcularPrecoReserva()
+       /* private static void CalcularPrecoReserva()
         {
             //validações: if date.now>reservationEndDate: veiculo.estado= Disponivel
             //variaveis: date.now, reservationDate, reservationEndDate, precoDia, precoFinal, 
             // usar timeSpan, depois timeSpan*precoDia;
             ListaVeiculosAluguer();
 
+            int days = 0;
+            DateTime d1 ;
+            DateTime d2 ;
 
-
-
-
-
-
+            ListaVeiculos();
             
-        }
+            Console.WriteLine("Qual o veículo que pretende alugar?");
+            int selecao = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"O estado atual do veículo é: {veiculos[selecao - 1].Estado + "-" + veiculos[selecao - 1].Estado}");
+            Console.WriteLine("Quando pretende alugar o carro?");
+            d1 = DateTime.Parse(Console.ReadLine());
+
+            Console.WriteLine("Quantos dias vai ser a reserva?");
+            days = int.Parse(Console.ReadLine());
+
+            double rental = 0;
+            TimeSpan t = d1 - d2;
+            rental = t.TotalDays;
+
+            double RentalTotal = 0;
+
+            RentalTotal = veiculos[selecao-1].PrecoDia * rental;
+
+
+            veiculos[selecao - 1].Estado = Console.ReadLine();
+            Console.WriteLine("Estado do veículo alterado com sucesso");
+            Console.ReadKey();
+
+        }*/
 
         private static void ExportarData()
         {
@@ -263,7 +289,6 @@ namespace _5412_Ficha4
                     case 4: ListarCamionetas(); break;
                     default: Console.WriteLine("Opção inválida"); Console.ReadKey(); break;
                 }
-
 
                 //for (int i = 0; i < veiculos.Count; i++)
                 //{

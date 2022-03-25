@@ -13,3 +13,18 @@ C:\Users\Nhillus\Desktop\New folder\New folder\Trabalho Prático\Trabalho Práti
 C:\Users\Nhillus\Desktop\New folder\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.pdb
 C:\Users\Nhillus\Desktop\New folder\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.genruntimeconfig.cache
 C:\Users\Nhillus\Desktop\New folder\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\ref\Trabalho Prático.dll
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net6.0\Trabalho Prático.exe
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net6.0\Trabalho Prático.deps.json
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net6.0\Trabalho Prático.runtimeconfig.json
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net6.0\Trabalho Prático.dll
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net6.0\ref\Trabalho Prático.dll
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\bin\Debug\net6.0\Trabalho Prático.pdb
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.csproj.AssemblyReference.cache
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.AssemblyInfoInputs.cache
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.AssemblyInfo.cs
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.csproj.CoreCompileInputs.cache
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.dll
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\ref\Trabalho Prático.dll
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.pdb
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net6.0\Trabalho Prático.genruntimeconfig.cache

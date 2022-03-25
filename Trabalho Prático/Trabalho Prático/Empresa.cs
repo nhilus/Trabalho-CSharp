@@ -82,43 +82,38 @@ namespace _5412_Ficha4
             }
 
         }
-       /* private static void CalcularPrecoReserva()
+        private static void CalcularPrecoReserva()
         {
-            //validações: if date.now>reservationEndDate: veiculo.estado= Disponivel
-            //variaveis: date.now, reservationDate, reservationEndDate, precoDia, precoFinal, 
-            // usar timeSpan, depois timeSpan*precoDia;
-            ListaVeiculosAluguer();
-
-            int days = 0;
-            DateTime d1 ;
-            DateTime d2 ;
+            DateTime dataAluguer ;
+            DateTime dataFim ;
 
             ListaVeiculos();
             
             Console.WriteLine("Qual o veículo que pretende alugar?");
             int selecao = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"O estado atual do veículo é: {veiculos[selecao - 1].Estado + "-" + veiculos[selecao - 1].Estado}");
+            Console.WriteLine($"O estado atual do veículo é: {veiculos[selecao - 1].MarcaModelo + "----" + veiculos[selecao - 1].Estado}");
             Console.WriteLine("Quando pretende alugar o carro?");
-            d1 = DateTime.Parse(Console.ReadLine());
+            dataAluguer = DateTime.Parse(Console.ReadLine());
 
-            Console.WriteLine("Quantos dias vai ser a reserva?");
-            days = int.Parse(Console.ReadLine());
+            Console.WriteLine("A reserva vai ser feita até quando?");
+            dataFim = DateTime.Parse(Console.ReadLine());
 
             double rental = 0;
-            TimeSpan t = d1 - d2;
+            TimeSpan t = dataFim - dataAluguer;
             rental = t.TotalDays;
 
-            double RentalTotal = 0;
+            double rentalTotal = 0;
 
-            RentalTotal = veiculos[selecao-1].PrecoDia * rental;
+            rentalTotal = veiculos[selecao-1].PrecoDia * rental;
 
+            Console.WriteLine($"O preço de reserva do veículo {veiculos[selecao-1].MarcaModelo} é de {rentalTotal}");
 
-            veiculos[selecao - 1].Estado = Console.ReadLine();
+            veiculos[selecao - 1].Estado = "Alugado";
             Console.WriteLine("Estado do veículo alterado com sucesso");
             Console.ReadKey();
 
-        }*/
+        }
 
         private static void ExportarData()
         {
@@ -261,6 +256,7 @@ namespace _5412_Ficha4
                 }
                     
             }
+            Console.WriteLine("Precione uma tecla para continuar");
             Console.ReadKey();
         }
 

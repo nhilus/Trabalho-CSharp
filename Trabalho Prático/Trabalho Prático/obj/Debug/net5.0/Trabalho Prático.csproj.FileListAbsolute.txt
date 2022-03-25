@@ -35,3 +35,4 @@ C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Deb
 C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\ref\Trabalho Prático.dll
 C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.pdb
 C:\Users\T0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.genruntimeconfig.cache
+C:\Users\t0121073\Desktop\New folder\Trabalho Prático\Trabalho Prático\obj\Debug\net5.0\Trabalho Prático.csproj.AssemblyReference.cache
